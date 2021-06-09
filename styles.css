@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+:root {
+    --brightOrange: hsl(31, 77%, 52%);
+    --darkCyan: hsl(184, 100%, 22%);
+    --veryDarkCyan: hsl(179, 100%, 13%);
+    --transparentWhite: hsla(0, 0%, 100%, 0.75);
+    --veryLightGray: hsl(0, 0%, 95%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--veryLightGray);
+    font-family: 'Lexend Deca', sans-serif;
+}
+
+h1 {
+    font-family: 'Big Shoulders Display', cursive;
+    color: var(--veryLightGray);
+    margin-bottom: 30px;
+}
+
+p {
+    color: var(--transparentWhite);
+    font-weight: 400;
+    line-height: 30px;
+    margin-bottom: 100px;
+}
+
+button {
+    font-family: 'Lexend Deca';
+    background-color: var(--veryLightGray);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 23px;
+    outline: none;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    margin: 200px auto;
+    max-width: 920px;
+}
+
+.cards {
+    display: grid;
+    grid-template-areas: "card-1 card-2 card-3";
+    grid-template-columns: 3fr 3fr 3fr;
+    grid-template-rows: auto;
+}
+
+.card {
+    padding: 50px 40px;
+}
+
+.card img {
+    margin-bottom: 35px;
+}
+
+.card:nth-child(1) {
+    grid-area: card-1;
+    background-color: var(--brightOrange);
+    border-radius: 10px 0 0 10px;
+}
+
+.card:nth-child(1) button {
+    color: var(--brightOrange);
+}
+
+.card:nth-child(2) {
+    grid-area: card-2;
+    background-color: var(--darkCyan);
+}
+
+.card:nth-child(2) button {
+    color: var(--darkCyan);
+}
+
+.card:nth-child(3) {
+    grid-area: card-3;
+    background-color: var(--veryDarkCyan);
+    border-radius: 0 10px 10px 0;
+}
+
+.card:nth-child(3) button {
+    color: var(--veryDarkCyan);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.attribution a {
+    color: var(--brightOrange);
+}
+
+@media (max-width: 1280px){
+    .container{
+        margin: 60px auto;
+    }
+}
+
+@media (max-width: 768px){
+    .container{
+        margin: 70px;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-areas: "card-1 card-2" "card-3 card-3";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto ;
+    }
+
+    .card:nth-child(1) {
+        border-radius: 10px 0 0 0;
+    }
+
+    .card:nth-child(2) {
+        border-radius: 0 10px 0 0;
+    }
+
+    .card:nth-child(3) {
+        border-radius: 0 0 10px 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        margin: 60px 20px;
+    }
+    .cards {
+        display: grid;
+        grid-template-areas: "card-1" "card-2" "card-3";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+    .card:nth-child(1) {
+        border-radius: 10px 10px 0 0;
+    }
+    .card:nth-child(3) {
+        border-radius: 0 0 10px 10px;
+    }
+}
