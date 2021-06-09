@@ -22,6 +22,7 @@ h1 {
     font-family: 'Big Shoulders Display', cursive;
     color: var(--veryLightGray);
     margin-bottom: 30px;
+    text-transform: uppercase;
 }
 
 p {
